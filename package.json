@@ -1,0 +1,34 @@
+{
+  "name": "nodejs-oracle-floki",
+  "version": "1.0.0",
+  "description": "A nodejs oracle capable to read and send data from/to a Devoleum smart contract",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Devoleum/nodejs-oracle-floki.git"
+  },
+  "author": "Lorenzo Zaccagnini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Devoleum/nodejs-oracle-floki/issues"
+  },
+  "homepage": "https://github.com/Devoleum/nodejs-oracle-floki#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "fastify": "^3.1.1",
+    "lodash.range": "^3.2.0",
+    "truffle-contract": "^4.0.31",
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "memory-cache": "^0.2.0",
+    "nodemon": "^1.18.10",
+    "web3": "^1.2.4"
+  }
+}
