@@ -73,5 +73,5 @@ Contributions of any kind are welcome!
 
 ## LICENSE
 
-[MOZILLA](LICENSE.md)
+[MOZILLA](LICENSE)
 
