@@ -73,5 +73,5 @@ Contributions of any kind are welcome!
 
 ## LICENSE
 
-[MOZILLA](LICENSE)
+[Mozilla Public License Version 2.0](LICENSE)
 
