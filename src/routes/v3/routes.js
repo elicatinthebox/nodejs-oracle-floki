@@ -1,24 +1,38 @@
-const {getItem, getItemsByIndexes} = require('../../helpers/web3Methods');
+const peekaboo = require('fastify-peekaboo')
 
-const getHistories = async (request, reply) => {
-  reply.send(await getItemsByIndexes("historiesCounter", "getHistoryInfo"))
-};
+const {
+  getMerchant,
+  getHistory,
+  getHistories,
+  getStep,
+  getSteps,
+} = require("./controllers/controllers");
 
-const getSteps = async (request, reply) => {
-  const historyId = request.params.historyid;
+module.exports = async (fastify, opts, done) => {
 
-  reply.send(await getItemsByIndexes("stepsOfHistory", "getStepInfo", parseInt(historyId)))
-};
+  await fastify.register(peekaboo, {
+    // default settings: cache good stuff for 1 day
+    rules: [{
+      request: {
+        methods: true,
+        route: true
+      },
+      response: {
+        status: (code) => code > 199 && code < 300
+      }
+    }],
+    mode: 'memoize',
+    storage: { mode: 'memory' },
+    expire: 86400000, // 1 day in ms
+    xheader: true,
+    log: true
+  })
+  
 
-const getMerchant = async (request, reply) => {
-  const id = request.params.id;
-
-  reply.send(await getItem(getMerchantInfo, parseInt(id)))
-};
-
-module.exports = function (fastify, opts, done) {
-  fastify.get("/allhistories", getHistories);
-  fastify.get("/steps/:historyid", getSteps);
   fastify.get("/merchant/:id", getMerchant);
+  fastify.get("/history/:historyid", getHistory);
+  fastify.get("/allhistories", getHistories);
+  fastify.get("/step/:historyid", getStep);
+  fastify.get("/history-steps/:historyid", getSteps);
   done();
 };

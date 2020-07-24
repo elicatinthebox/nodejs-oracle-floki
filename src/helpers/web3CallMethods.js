@@ -16,26 +16,24 @@ const contractInstance = new web3.eth.Contract(
 
 const getItem = async (getItemMethod, optParam) => {
   const item = optParam
-    ? parseInt(await contractInstance.methods[getItemMethod](optParam).call())
-    : parseInt(await contractInstance.methods[getItemMethod]().call());
+    ? await contractInstance.methods[getItemMethod](optParam).call()
+    : await contractInstance.methods[getItemMethod]().call();
 
   return item;
 };
 
 const getItemsByIndexes = async (getIndexesMethod, getItemMethod, optParam) => {
   const indexes = optParam
-    ? parseInt(
-        await contractInstance.methods[getIndexesMethod](optParam).call()
-      )
+    ? await contractInstance.methods[getIndexesMethod](optParam).call()
     : parseInt(await contractInstance.methods[getIndexesMethod]().call());
 
   let items = [];
 
-  console.log(indexes)
+  console.log(indexes);
 
   const iteration = Array.isArray(indexes) ? indexes : range(1, indexes + 1);
 
-  console.log(iteration)
+  console.log(iteration);
 
   await Promise.all(
     iteration.map(async (i) => {

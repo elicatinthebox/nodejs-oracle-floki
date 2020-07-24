@@ -19,15 +19,17 @@
   "homepage": "https://github.com/Devoleum/nodejs-oracle-floki#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "fastify": "^3.1.1",
+    "fastify": "^2.0.0",
+    "fastify-peekaboo": "^1.2.4-beta",
     "lodash.range": "^3.2.0",
+    "memory-cache": "^0.2.0",
+    "middie": "^5.1.0",
     "truffle-contract": "^4.0.31",
     "truffle-hdwallet-provider": "^1.0.17"
   },
   "devDependencies": {
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
-    "memory-cache": "^0.2.0",
     "nodemon": "^1.18.10",
     "web3": "^1.2.4"
   }
