@@ -29,7 +29,7 @@ The development uses nodemon can be started using:
 ## API
 
 
-Contract
+### Contract
 
 **GET (cached in memory for 1 day)**
 
@@ -41,7 +41,7 @@ Contract
 * "v3/contract/step/:stepid" get the step info by the step ID (number)
 * "v3/contract/history-steps/:historyid" get all the steps by the history ID (number)
 
-Utils
+### Utils
 
 **GET**
 
