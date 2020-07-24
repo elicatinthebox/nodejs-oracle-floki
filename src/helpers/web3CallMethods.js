@@ -3,15 +3,15 @@ const BigNumber = require("bignumber.js");
 var range = require("lodash.range");
 var Devoleum = require("../routes/v3/contract/Devoleum.json");
 
-console.log(Devoleum.networks[4].address);
 const ACCOUNT = process.env.INFURA_ACCOUNT;
+const NETWORK_ID = process.env.NETWORK_ID;
 const INFURA_API = process.env.INFURA_API;
 
 const web3 = new Web3(INFURA_API);
 
 const contractInstance = new web3.eth.Contract(
   Devoleum.abi,
-  Devoleum.networks[4].address
+  Devoleum.networks[NETWORK_ID].address
 );
 
 const getItem = async (getItemMethod, optParam) => {
