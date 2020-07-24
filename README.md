@@ -33,23 +33,23 @@ The development uses nodemon can be started using:
 
 **GET (cached in memory for 1 day)**
 
-* "v3/contract/merchant/:id" get Merchant info by the merchant ID (address)
-* "v3/contract/merchant/:id/histories" get all the merchant histories by the merchant ID (address)
-* "v3/contract/history/:historyid" get the history info by the history ID (number)
-* "v3/contract/allhistories" get all the histories
-* "v3/contract/allhistories/:category" get all the histories by the history category (string)
-* "v3/contract/step/:stepid" get the step info by the step ID (number)
-* "v3/contract/history-steps/:historyid" get all the steps by the history ID (number)
+* `v3/contract/merchant/:id` get Merchant info by the merchant ID (address)
+* `v3/contract/merchant/:id/histories` get all the merchant histories by the merchant ID (address)
+* `v3/contract/history/:historyid` get the history info by the history ID (number)
+* `v3/contract/allhistories` get all the histories
+* `v3/contract/allhistories/:category` get all the histories by the history category (string)
+* `v3/contract/step/:stepid` get the step info by the step ID (number)
+* `v3/contract/history-steps/:historyid` get all the steps by the history ID (number)
 
 ### Utils
 
 **GET**
 
-* "v3/utils/test" simple get to see if the server is responding
+* `v3/utils/test` simple get to see if the server is responding
 
 **POST**
 
-* "v3/utils/headers" requires a "url" property, get the headers of an URL request for example `{"url": "https://raw.githubusercontent.com/Devoleum/templates-json/master/steps/harvest.json"}`, especially used to get the content length.
+* `v3/utils/headers` requires a "url" property, get the headers of an URL request for example `{"url": "https://raw.githubusercontent.com/Devoleum/templates-json/master/steps/harvest.json"}`, especially used to get the content length.
 
 
 ## Contributors ✨
