@@ -1,9 +1,20 @@
-const { getItem, getItemsByIndexes } = require("../../../helpers/web3CallMethods");
+const {
+  getItem,
+  getItemsByIndexes,
+} = require("../../../helpers/web3CallMethods");
 
 const getMerchant = async (request, reply) => {
   const id = request.params.id;
 
   reply.send(await getItem("getMerchantInfo", id));
+};
+
+const getHistoriesByMerchant = async (request, reply) => {
+  const id = request.params.id;
+
+  reply.send(
+    await getItemsByIndexes("historiesOfMerchant", "getHistoryInfo", id)
+  );
 };
 
 const getHistory = async (request, reply) => {
@@ -17,10 +28,18 @@ const getHistories = async (request, reply) => {
   reply.send(await getItemsByIndexes("historiesCounter", "getHistoryInfo"));
 };
 
-const getStep = async (request, reply) => {
-  const id = request.params.id;
+const getHistoriesByCategory = async (request, reply) => {
+  const historyId = request.params.category;
 
-  reply.send(await getItem("getStepInfo", parseInt(id)));
+  reply.send(
+    await getItemsByIndexes("historiesOfCategory", "getHistoryInfo", category)
+  );
+};
+
+const getStep = async (request, reply) => {
+  const stepID = request.params.stepid;
+
+  reply.send(await getItem("getStepInfo", parseInt(stepID)));
 };
 const getSteps = async (request, reply) => {
   const historyId = request.params.historyid;
@@ -36,8 +55,10 @@ const getSteps = async (request, reply) => {
 
 module.exports = {
   getMerchant,
+  getHistoriesByMerchant,
   getHistory,
   getHistories,
+  getHistoriesByCategory,
   getStep,
   getSteps,
 };

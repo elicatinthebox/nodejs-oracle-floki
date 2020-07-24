@@ -8,7 +8,7 @@ fastify.get('/', async (request, reply) => {
   })
 
 fastify.register(require('./routes/v3/utils/route_utils'), { prefix: '/v3/utils' })
-fastify.register(require('./routes/v3/routes'), { prefix: '/v3/simulation' })
+fastify.register(require('./routes/v3/routes'), { prefix: '/v3/contract' })
 
 const start = async (port) => {
     try {

@@ -16,7 +16,7 @@ module.exports = function (fastify, opts, done) {
     reply.send({ test: "uptime ok" });
   });
 
-  fastify.post("/size", optSize, async (request, reply) => {
+  fastify.post("/headers", optSize, async (request, reply) => {
     getHeaders(request.body.url).then((headers) => {
       reply.send(headers);
     });
