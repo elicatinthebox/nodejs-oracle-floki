@@ -8,11 +8,6 @@ fastify.get('/', async (request, reply) => {
     return { hello: 'world' }
   })
 
-
-fastify.get('/', async (request, reply) => {
-    return { hello: 'world' }
-  })
-
 fastify.register(require('./routes/v3/utils/route_utils'), { prefix: '/v3/utils' })
 fastify.register(require('./routes/v3/routes'), { prefix: '/v3/contract' })
 
