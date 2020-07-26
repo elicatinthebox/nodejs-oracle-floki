@@ -1,3 +1,6 @@
+'use strict'
+const fastify = require('fastify')()
+
 if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 const PORT = process.env.PORT || 8000
 console.log(`PORT ${PORT}`)
