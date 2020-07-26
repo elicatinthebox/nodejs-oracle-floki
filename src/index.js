@@ -5,13 +5,7 @@ const PORT = process.env.PORT || 8000
 console.log(`PORT ${PORT}`)
 
 fastify.register(require('fastify-cors'), { 
-    origin: (origin, cb) => {
-      if(/localhost/.test(origin)){
-        //  Request from localhost will pass
-        cb(null, true)
-        return
-      }
-      cb(new Error("Not allowed"), false)
+    origin: false
 }})
 
 
