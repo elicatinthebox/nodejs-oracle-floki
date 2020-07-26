@@ -1,4 +1,5 @@
 import fastify from 'fastify';
+const port = process.env.PORT || 8000
 
 fastify.get('/', async (request, reply) => {
     return { hello: 'world' }
