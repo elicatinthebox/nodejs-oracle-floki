@@ -20,4 +20,4 @@ const start = async (port) => {
     }
   }
 
-  start(PORT)
+  start(port)
