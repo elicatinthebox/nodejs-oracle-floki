@@ -1,7 +1,6 @@
 if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
 const fastify = require('fastify')({ logger: true })
-const port = process.env.PORT || 8000
 
 fastify.get('/', async (request, reply) => {
     return { hello: 'world' }
@@ -10,14 +9,7 @@ fastify.get('/', async (request, reply) => {
 fastify.register(require('./routes/v3/utils/route_utils'), { prefix: '/v3/utils' })
 fastify.register(require('./routes/v3/routes'), { prefix: '/v3/contract' })
 
-const start = async (port) => {
-    try {
-      await fastify.listen(port)
-      fastify.log.info(`server listening on ${port}`)
-    } catch (err) {
-      fastify.log.error(err)
-      process.exit(1)
-    }
-  }
-
-  start(port)
+fastify.listen(process.env.PORT || 8000, err => {
+  if (err) throw err
+  console.log(`server listening on ${fastify.server.address().port}`)
+})
