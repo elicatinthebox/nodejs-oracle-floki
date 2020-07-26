@@ -6,7 +6,7 @@ console.log(`PORT ${PORT}`)
 
 fastify.register(require('fastify-cors'), { 
     origin: false
-}})
+})
 
 
 fastify.get('/', async (request, reply) => {
