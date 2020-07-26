@@ -11,7 +11,7 @@ fastify.get('/', async (request, reply) => {
 fastify.register(require('./routes/v3/utils/route_utils'), { prefix: '/v3/utils' })
 fastify.register(require('./routes/v3/routes'), { prefix: '/v3/contract' })
 
-fastify.listen(PORT, err => {
+fastify.listen(PORT, '0.0.0.0', err => {
   if (err) throw err
   console.log(`server listening on ${fastify.server.address().port}`)
 })
