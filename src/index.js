@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
 const fastify = require('fastify')({ logger: true })
-const PORT = process.env.PORT
+const port = process.env.PORT || 8000
 
 fastify.get('/', async (request, reply) => {
     return { hello: 'world' }
