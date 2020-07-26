@@ -1,5 +1,4 @@
-'use strict'
-const fastify = require('fastify')()
+const fastify = require('fastify')({ logger: true })
 
 if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 const PORT = process.env.PORT || 8000
@@ -8,7 +7,7 @@ console.log(`PORT ${PORT}`)
 fastify.get('/', async (request, reply) => {
     return { hello: 'world' }
   })
-const fastify = require('fastify')({ logger: true })
+
 
 fastify.get('/', async (request, reply) => {
     return { hello: 'world' }
