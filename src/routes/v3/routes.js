@@ -34,7 +34,7 @@ module.exports = async (fastify, opts, done) => {
   });
 
   fastify.get("/merchant/:id", getMerchant);
-  fastify.get("/merchant/:id/histories", getHistoriesByMerchant);
+  fastify.get("/merchant/histories/:id", getHistoriesByMerchant);
   fastify.get("/history/:historyid", getHistory);
   fastify.get("/allhistories", getHistories);
   fastify.get("/allhistories/:category", getHistoriesByCategory);
