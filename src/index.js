@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 8000
 console.log(`PORT ${PORT}`)
 
 fastify.register(require('fastify-cors'), {
-  origin: [/\.devoleum\.com$/, /^https:\/\/devoleum-sim-test.netlify.app(.*)/, /^http:\/\/localhost(.*)/]
+  origin: [/\.devoleum\.com$/, /^https:\/\/devoleum-sim-test.netlify.app(.*)/, /^http:\/\/localhost(.*)/, /^https:\/\/5f3eb53df1854c0007e02a2a--devoleum-sim-test.netlify.app(.*)/]
 })
 
 fastify.get('/', async (request, reply) => {
