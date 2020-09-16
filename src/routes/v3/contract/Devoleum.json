@@ -21721,8 +21721,8 @@
         }
       },
       "links": {},
-      "address": "0xf69586204355912582de6ae646A0C86Da4ea16b8",
-      "transactionHash": "0x2a98419783a1a0b0b3495e8ad2472f4db95327c3023e36c9981a5927704512c7"
+      "address": "0x4bE6D321FE222C96E12717067521129a291Cc54B",
+      "transactionHash": "0xef14aaba1f582f1814d626443ca5439a56ac833412928ffd6ec95f61dcb56e6e"
     },
     "5777": {
       "events": {
@@ -21886,7 +21886,7 @@
     }
   },
   "schemaVersion": "3.2.1",
-  "updatedAt": "2020-09-15T16:35:20.210Z",
+  "updatedAt": "2020-09-16T15:02:47.496Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Lorenzo Zaccagnini Elisa Romondia",
