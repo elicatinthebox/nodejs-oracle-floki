@@ -38,6 +38,7 @@ const getItemsByIndexes = async (getIndexesMethod, getItemMethod, optParam) => {
   await Promise.all(
     iteration.map(async (i) => {
       let item = await contractInstance.methods[getItemMethod](i).call();
+      item.id = i;
       items.push(item);
     })
   );
